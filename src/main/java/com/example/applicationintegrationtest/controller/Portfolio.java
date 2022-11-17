@@ -28,6 +28,18 @@ public class Portfolio {
         return marketValue;
     }
 
+    public double getMarketValueWrong() {
+        double marketValue = 0.0;
+        System.out.println(stocks);
+
+        if (stocks.isEmpty()) {
+        } else
+            for (Stock stock : stocks) {
+                marketValue = marketValue + stock.getPrice() * stock.getQuantity();
+            }
+        return marketValue + 100;
+    }
+
     public Stock getStockById(String id) {
         Stock res = null;
         if (!stocks.isEmpty()) {

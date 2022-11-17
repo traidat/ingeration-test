@@ -54,18 +54,25 @@ public class PortfolioTesterWithoutMockito {
         System.out.println("test_market_value_normal");
     }
 
-    @Test
-    public void test_market_value_failed() {
-        double marketValue = portfolio.getMarketValue();
-        Assertions.assertEquals(4200.0, marketValue);
-        System.out.println("test_market_value_failed");
-    }
+//    @Test
+//    public void test_market_value_failed() {
+//        double marketValue = portfolio.getMarketValue();
+//        Assertions.assertEquals(4200.0, marketValue);
+//        System.out.println("test_market_value_failed");
+//    }
 
     @Test
     public void test_get_stock_byId_success() {
         Stock stock = portfolio.getStockById("1");
         Assertions.assertEquals("Google", stock.getTicker());
         System.out.println("test_get_stock_byId_success");
+    }
+
+    @Test
+    public void test_market_value_failed_with_wrong_code() {
+        double marketValue = portfolio.getMarketValueWrong();
+        Assertions.assertEquals(4300.0, marketValue);
+        System.out.println("test_market_value_failed");
     }
 
     @Test
