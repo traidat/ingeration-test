@@ -59,13 +59,6 @@ public class PortfolioTesterWithMockito {
     }
 
     @Test
-    public void test_market_value_failed() {
-        when(portfolio.getMarketValue()).thenReturn(5000.0);
-        Assertions.assertEquals(4000.0, portfolio.getMarketValue());
-        System.out.println("test_market_value_failed");
-    }
-
-    @Test
     public void test_get_stock_byId_success() {
         Stock stock = Mockito.mock(Stock.class);
         when(portfolio.getStockById(stock.getStockId())).thenReturn(stock);
